@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
 
 import 'core/theme/app_theme.dart';
+import 'core/widgets/app_shell.dart';
 import 'features/auth/controller/auth_controller.dart';
-import 'features/home_Screen/screens/home_screen.dart';
 import 'features/auth/screens/login_screen.dart';
+import 'features/home_Screen/screens/bottom_nav_bar_screens.dart';
 
-/// Root application widget. Shows login or home based on saved session.
+/// Root application widget. Shows login or home (bottom nav) based on saved session.
+/// Handles connectivity, lifecycle, and supports rotation and various screen sizes.
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Peanut Client',
       theme: AppTheme.lightTheme,
       initialRoute: '/',
       routes: {
         '/': (context) => const _AuthGate(),
-        '/home': (context) => const HomeScreen(),
+        '/home': (context) => const BottomNavBarScreens(),
+      },
+      builder: (context, child) {
+        return AppShell(child: child);
       },
     );
   }
@@ -39,7 +45,7 @@ class _AuthGate extends StatelessWidget {
         }
         final isLoggedIn = snapshot.data ?? false;
         if (isLoggedIn) {
-          return const HomeScreen();
+          return const BottomNavBarScreens();
         }
         return const LoginScreen();
       },

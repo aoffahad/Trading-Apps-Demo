@@ -12,4 +12,18 @@ class AppColors {
 
   static const Color success = Color(0xFF2E7D32);
   static const Color error = Color(0xFFC62828);
+
+  // Profile (dark) screen
+  static const Color profileBackground = Color(0xFF1C1E26);
+  static const Color profileCard = Color(0xFF252830);
+  static const Color profileText = Color(0xFFFFFFFF);
+  static const Color profileTextSecondary = Color(0xFF9CA3AF);
+  static const Color profileAccent = Color(0xFF2DD4BF);
+  static const Color profileAvatarBg = Color(0xFF1E3A5F);
+
+  // Trades (dark) screen
+  static const Color tradeBuy = Color(0xFF2DD4BF);
+  static const Color tradeSell = Color(0xFFE57373);
+  static const Color tradeProfit = Color(0xFF4ADE80);
+  static const Color tradeLoss = Color(0xFFF87171);
 }

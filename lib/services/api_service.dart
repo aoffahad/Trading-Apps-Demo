@@ -1,4 +1,3 @@
-
 class ApiService {
   ApiService._();
 
@@ -7,4 +6,10 @@ class ApiService {
 
   static const String login =
       '${baseUrl}ClientCabinetBasic/IsAccountCredentialsCorrect';
+  static const String getAccountInfo =
+      '${baseUrl}ClientCabinetBasic/GetAccountInformation';
+  static const String getLastFourNumbersPhpne =
+      '${baseUrl}ClientCabinetBasic/GetLastFourNumbersPhone';
+  static const String openTrades =
+      '${baseUrl}ClientCabinetBasic/GetOpenTrades';
 }
